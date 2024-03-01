@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            padding: 0px;
+            margin: 0px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            align-items: center;
+            justify-items: center;
+            font: 1.4em arial;
+            color: rgb(182, 182, 182);
+            /* color: rgb(83, 0, 72); */
+        }
+        div{
+            background-color: greenyellow;
+            width: 200px;
+            height: 200px;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="evento">
+        Interaja...
+    </div>
+    <script>
+        var a = window.document.getElementById('evento')
+        a.addEventListener('click', clicou)
+        a.addEventListener('mouseenter', entrou)
+        a.addEventListener('mouseout', sair)
+        a.addEventListener('mousedown', segurou)
+        function clicou(){
+            a.innerText = 'Clicou'
+            a.style.background = 'rgb(151, 23, 23)'
+        }
+        function entrou(){
+            a.style.background = 'rgb(37, 86, 192)'
+        }
+        function sair(){
+            a.style.background = 'greenyellow'
+            a.innerText = 'Interaja...'
+        }
+        function segurou(){
+            a.style.background = ' rgb(83, 0, 72)'
+            a.innerText = 'Segurou'
+        }
+    </script>
+</body>
+</html>
