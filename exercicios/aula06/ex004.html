@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você vota ou não?</title>
+</head>
+<body>
+    <h1>Verifique sua situação mediante o voto eleitoral</h1>
+    <input type="number" name="idade" id="idade">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <p id="res"></p>
+
+
+    <script>
+        function verificar(){
+            var idade = window.document.getElementById('idade')
+            var verdadeira_idade = Number(idade.value)
+            var res = window.document.getElementById('res')
+            if(verdadeira_idade < 16){
+                res.innerHTML = '<p>Você <strong>não</strong> vota.</p>'
+            } else if(verdadeira_idade < 18){
+                res.innerHTML = '<p>Voto <strong>opcional</strong>.</p>'
+
+            } else if(verdadeira_idade >= 18 && verdadeira_idade < 65){
+                res.innerHTML = '<p>Voto <strong>obrigatório!</strong></p>'
+
+            } else if(verdadeira_idade > 65){
+                res.innerHTML = '<p>Voto <strong>opcional</strong>.</p>'
+            }
+            
+                     
+        }
+    </script>
+</body>
+</html>

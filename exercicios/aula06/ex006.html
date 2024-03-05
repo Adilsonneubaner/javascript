@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual dia é hoje?</title>
+</head>
+<body>
+    <h1>Saiba qual dia da semana é hoje</h1>
+    <input type="button" value="Verificar" onclick="teste()">
+    <p id="res"></p>
+
+    <script>
+        function teste(){
+            var agora = new Date()
+            var dia = agora.getDay()
+            var res = window.document.getElementById('res')
+            switch(dia){
+                case 0:
+                    res.innerHTML = `<p>Hoje é <strong>Domingo.</strong></p>`
+                    break
+                case 1:
+                    res.innerHTML = '<p>Hoje é <strong>Segunda.</strong></p>'
+                    break
+                case 2:
+                    res.innerHTML = '<p>Hoje é <strong>Terça.</strong></p>'
+                    break
+                case 3: 
+                    res.innerHTML = '<p>Hoje é <strong>Quarta.</strong></p>'
+                    break
+                case 4: 
+                    res.innerHTML = '<p>Hoje é <strong>Quinta.</strong></p>'
+                    break
+                case 5: 
+                    res.innerHTML = '<p>Hoje é <strong>Sexta.</strong></p>'
+                    break
+                case 6: 
+                    res.innerHTML = '<p>Hoje é <strong>Sábado.</strong></p>'
+                    break
+                default: 
+                    res.innerHTML = '<p><strong>[ERRO] dia inválido!</strong></p>'
+                    break
+            }
+        }
+    </script>
+</body>
+</html>

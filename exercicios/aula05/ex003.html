@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+</head>
+<body>
+    <h1>Testando velocidade do seu carro</h1> 
+    <p>velocidade do seu carro <input type="number" name="vel" id="vel" step="0.1"> Km/h</p>
+    <input type="button" value="Verificar" onclick="testvel()">
+    <p id="res">Resultado</p>
+    <script>
+        function testvel(){
+            var radar = window.document.getElementById('vel')
+            var vel = Number(radar.value)
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>Sua velocidade atual é de:<strong> ${vel}</strong></p>`
+            if(vel > 60){
+                res.innerHTML += '<p>Você passou acima da velocidade permitida, <strong>MULTADO!</strong></p>'
+            }
+            res.innerHTML += '<p>Dirija sempre usando o cinto de segurança</p>'
+        }
+    </script>
+</body>
+</html>

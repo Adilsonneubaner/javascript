@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boa Madrugada Bom dia Boa tarde Boa Noite</title>
+</head>
+<body>
+    <h1>Bom Madrugada? Bom Dia? Boa Tarde? Boa Noite?</h1> 
+    <input type="button" value="Saber" onclick="testar()">
+    <p id="res"></p> 
+
+    <script>
+        function testar(){
+            var agora = new Date()
+            var hora = agora.getHours()
+            var res = window.document.getElementById('res')
+            if(hora < 4){
+                res.innerHTML = `<p>De acordo com o seu horário agora,<strong> BOA MADRUGADA, VAI DORMIR!</strong></p>`
+            } else if(hora >= 4 && hora < 12){
+                res.innerHTML = '<p>De acordo com o seu horário agora, <strong>BOM DIAAA, O SOL JÁ NASCEU NA FAZENDINHA!</strong></p>'
+            } else if(hora <= 18){
+               res.innerHTML = '<p>De acordo com seu horário agora, <strong>BOA TARDE,TIRE UM COCHILO DEPOIS DO ALMOÇO.</strong></p>'     
+            } else if(hora > 18){
+                res.innerHTML = '<p>De acordo com seu horário agora, <strong>BOA NOITE, NÃO VÁ DORMIR TÃO TARDE VIU!</strong></p>'
+            }
+        }
+    </script>
+</body>
+</html>

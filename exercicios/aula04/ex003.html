@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h1>Trabalhando com dados</h1>
+      <button onclick="start()">Comece aqui</button>
+      <section id="resultado">
+        <p>Aqui será exibido seu resultado</p>
+      </section>
+      <script>
+        function start(){
+            var nome = window.prompt('Qual é o seu nome?')
+            var res = window.document.getElementById('resultado')
+            res.innerHTML = `Olá <strong>${nome}</strong>, é um grande prazer te conhecer &#x1F596;`
+        }
+      </script>
+</body>
+</html>
