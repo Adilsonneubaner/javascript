@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculando seu troco</h1>
+    <input type="button" value="Comece" onclick="teste()">
+    <script>
+        function teste(){
+           var item = window.prompt('Qual item você deseja comprar?')
+           var valor = window.prompt('Qual é o preço dele?')
+           var quantia = window.prompt('Quanto você deu em dinheiro?')
+           var troco =  quantia - valor
+           window.alert(`Você comprou ${item} por ${valor} e pagou ${quantia}, vai receber ${troco} de troco`)
+        }
+    </script>
+</body>
+</html>

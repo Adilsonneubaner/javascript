@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Antecessor e Sucessor</h1>
+    <input type="button" value="Comece" onclick="comecar()">
+    <script>
+        function comecar(){
+            var numero = window.prompt('Digite um número')
+            var num = Number(numero)
+            var antecessor = num - 1
+            var sucessor = num + 1 
+           window.alert(`Depois do número ${num} temos o ${sucessor} e antes temos o ${antecessor}`)
+        }
+    </script>
+</body>
+</html>
