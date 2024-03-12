@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Convertor de Temperaturas</h1>
+    <input type="button" value="Converter" onclick="start()">
+    <p id="res"></p>
+    <script>
+        function start(){
+            var formato = new Intl.NumberFormat('pt-BR')//Mudar formato para aparecer na tela os numeros no padrao BR
+            var res = window.document.getElementById('res')
+            var c = window.prompt('Digite uma temperatura, em Celsius.')
+            var c = c.replace(',', '.')//Mudar formato para usuario poder digitar virgula entre numeros
+            var celsius = Number(c) 
+            var celsius_formatado = formato.format(celsius)//Alterando o formato nas variaveis a serem exibidas
+
+            var kelvin = celsius + 273
+            var kelvin_formatado = formato.format(kelvin)//Alterando o formato nas variaveis a serem exibidas
+
+            var fahrenheit = celsius * 1.8 + 32
+            var fahrenheit_formatado = formato.format(fahrenheit)//Alterando o formato nas variaveis a serem exibidas
+
+            res.innerHTML = `<h2>${celsius_formatado} °C (Celsius), equivale...</h2>`
+            res.innerHTML += `<p>${kelvin_formatado} °K (Kelvin)</p>`
+            res.innerHTML += `<p>${fahrenheit_formatado} °F (Fahrenheit)</p>`
+        }
+    </script>
+</body>
+</html>

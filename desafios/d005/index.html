@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convertor de medidas</h1>
+    <input type="button" value="Converter" onclick="comecar()">
+    <p id="res">Clique no botão acima para começar</p>
+
+    <script>
+        function comecar(){
+            var res = window.document.getElementById('res')
+            var formato = new Intl.NumberFormat('pt-BR')
+            var m = window.prompt('Digite uma distância, em (m)')
+            var m = m.replace(',', '.')
+            var metro = formato.format(m)
+            var km = m / 1000
+            var quilometro = formato.format(km)
+            var hm = m / 100
+            var hectometro = formato.format(hm)
+            var dam = m / 10
+            var decametro = formato.format(dam)
+            var dm = m * 10
+            var decimetro = formato.format(dm)
+            var cm = m * 100
+            var centimetro = formato.format(cm)
+            var mm = m * 1000
+            var milimetro = formato.format(mm)
+    
+            res.innerHTML = `<h2>A distância de ${metro} metros corresponde a...</h2>`
+            res.innerHTML += `<p>${quilometro} quilômetros (km) <br></p>`
+            res.innerHTML += `<p>${hectometro} hectômetro (hm) <br></p>`
+            res.innerHTML += `<p>${decametro} decâmetros (Dam) <br></p>`
+            res.innerHTML += `<p>${decimetro} decímetros (dm) <br></p>`
+            res.innerHTML += `<p>${centimetro} centímetros (cm) <br></p>`
+            res.innerHTML += `<p>${milimetro} milímetros (mm)</p>`
+        }
+    </script>
+</body>
+</html>
