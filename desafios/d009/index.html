@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <input type="button" value="Reajustar Salário" onclick="comecar()">
+    <p id="res"></p>
+
+    <script>
+        function comecar(){
+            var formato = new Intl.NumberFormat('pt-BR')
+           
+            var res = window.document.getElementById('res')
+
+            var nome = window.prompt('Qual é o nome do funcionário?')
+
+            var salario = window.prompt(`Qual é o salário atual de ${nome}`)
+            salario = salario.replace(',','.')
+            var s = Number(salario)
+            var salario_formatado = formato.format(s)
+
+            var porcentagem = window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`)
+            porcentagem = porcentagem.replace(',','.')
+            var porcentagem_formatada = formato.format(porcentagem)
+            
+            var reajuste = s * porcentagem / 100
+            var reajuste_formatado = formato.format(reajuste)
+
+            var atualsalario = s + reajuste
+            var atualsalario_formatado = formato.format(atualsalario)
+
+            res.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>`
+            res.innerHTML += `<p>O atual salário era R$ ${salario_formatado}.</p>`
+            res.innerHTML += `<p>Com o aumento de ${porcentagem_formatada}%, o salário vai aumentar R$ ${reajuste_formatado} no próximo mês.</p>`
+            res.innerHTML +=  `<p>E a partir daí, ${nome} vai passar a ganhar R$ ${atualsalario_formatado}.</p>`
+        }
+    </script>
+</body>
+</html>

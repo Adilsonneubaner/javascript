@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Conversor R$ => US$</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <p id="res">Clique no botão acima para iniciar</p>
+
+    <script>
+        var dolar = window.prompt('Para começar, digite a cotação do dólar de agora.')
+        var dolar = dolar.replace(',','.')
+        var valor_dolar = Number(dolar)
+        function converter(){
+            var res = window.document.getElementById('res')
+            var reais = window.prompt('Quantos reais você tem na carteira?')
+            var reais = reais.replace(',','.')
+            var quantia_reais = Number(reais)
+            var quantia_dolar = quantia_reais / valor_dolar
+            
+            res.innerHTML = `Possuindo <strong>${quantia_reais} R$</strong> e levando a cotação atual do dolar <strong>${valor_dolar} US$</strong>, você terá <strong>${quantia_dolar} dólares</strong> convertidos.`
+        }
+    </script>
 </body>
 </html>

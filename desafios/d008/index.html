@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <input type="button" value="Desconto de 10%" onclick="calcular()">
+    <p id="res"></p>
+
+    <script>
+        function calcular(){
+            var formato = new Intl.NumberFormat('pt-BR')
+            var res = window.document.getElementById('res')
+            var produto = window.prompt('Qual produto você está comprando?')
+            var v = window.prompt(`Qual é o preço de ${produto}?`)
+            var v = v.replace(',','.')
+            var valor = Number(v)
+            var valor_formatado = formato.format(valor)
+
+            var desconto = (valor * 10) / 100
+            var desconto_formatado = formato.format(desconto)
+
+            var precofim = valor - desconto
+            var precofim_formatado = formato.format(precofim)
+
+            res.innerHTML = `<h2>Calculando desconto de 10% para ${produto}</h2>`
+            res.innerHTML += `<p>O preço original era R$ ${valor_formatado}</p>`
+            res.innerHTML += `<p>Você acaba de ganhar R$ ${desconto_formatado} de desconto (-10%)</p>`
+            res.innerHTML += `No fim, você vai pagar R$ ${precofim_formatado} no produto ${produto}`
+        }
+    </script>
+</body>
+</html>
