@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste de Array</h1>   
+    <input type="button" value="Começar" onclick="comecar()"> 
+    <p id="res">Exibir os valores digitados</p>
+
+    <script>
+        function comecar (){
+            var quantidade = window.prompt('Digite a quantidade de valores que seu Array vai ter')
+            var res = window.document.getElementById('res')
+            var array = [0]
+            for(var pos = 0; pos < quantidade; pos++){
+                array[pos] = window.prompt('Digite um valor para o Array')
+            }
+            res.innerHTML = `<p>Exibindo os valores de acordo com a quantidade especificada, ${quantidade}</p>`
+            for (pos in array){
+                res.innerHTML += ` ${array[pos]}`
+            }
+            res.innerHTML += '<p>Colocando o Array em ordem crescente.</p>'
+            array.sort()
+            for (pos in array){
+                res.innerHTML += ` ${array[pos]}`
+            }
+            res.innerHTML += `<p>Seu Array tem ${array.length} casas</p>` 
+            //Parte segundo botao
+
+            var botao = document.createElement('input')
+            botao.type = 'button'
+            botao.value = 'Clique aqui se deseja adicionar valores ao seu Array'
+            document.body.appendChild(botao)
+
+            botao.onclick = function(){
+                var valor = window.prompt('Digite o valor que deseja adicionar')
+                array.push(valor)
+                array.sort()
+                res.innerHTML += `<p>Array com seu novo valor (${valor}) e já colocado em ordem crescente</p>`
+                for(pos in array){
+                    res.innerHTML += ` ${array[pos]}`
+                }
+            }
+        }
+    </script>
+</body>
+</html>
