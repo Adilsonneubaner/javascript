@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Colocando em ordem inversa</h1>
+    <p>
+        <label for="num">Digite um número:</label>
+        <input type="number" name="num" id="num">
+        <input type="button" value="Comecar" onclick="comecar()">
+    </p>
+    <p id="val_dig">Valores digitador:</p>
+    <input type="button" value="Finalizar" onclick="finalizar()">
+    <p>Valores em ordem inversa ao que foi digitado:</p>
+    <p id="res"></p>
+
+    <script>
+        var array = []
+        var contador = 0
+        var num = document.getElementById('num')
+        var res = document.getElementById('res')
+        var val_dig = window.document.getElementById('val_dig')
+        function comecar(){
+            array[contador] = num.value
+            val_dig.innerHTML += ` ${array[contador]} `
+            contador++
+            num.value = ''
+            num.focus()
+            res.innerHTML = ''
+        }
+        function finalizar(){
+            for(var pos = array.length - 1; pos >= 0; pos--){
+                res.innerHTML += ` ${array[pos]}`
+            }
+        }
+    </script>
+</body>
+</html>
